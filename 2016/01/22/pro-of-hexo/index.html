@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="java 多线程," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -57,41 +57,22 @@
 
 
 
-<meta name="description" content="corejava学习之多线程使用自定义线程机制，有两种实现方式
+<meta name="description" content="1 执行hexo deploy 后，提示done，但是github上没更新
 
-实现java.lang.Runnable接口 class MyRunnable implements Runnable{
-    //实现run()方法
-    public void run(){
-        //task code
-    }
-}
- 接着,Thread t = new Thread(new MyRunnabl">
+是由于站点配置文件_config.yml中的deploy冒号后面加空格">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java_thread">
-<meta property="og:url" content="http://wudixiaomai.github.io/2016/01/21/demo/index.html">
+<meta property="og:title" content="hexo常见问题">
+<meta property="og:url" content="http://wudixiaomai.github.io/2016/01/22/pro-of-hexo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="corejava学习之多线程使用自定义线程机制，有两种实现方式
+<meta property="og:description" content="1 执行hexo deploy 后，提示done，但是github上没更新
 
-实现java.lang.Runnable接口 class MyRunnable implements Runnable{
-    //实现run()方法
-    public void run(){
-        //task code
-    }
-}
- 接着,Thread t = new Thread(new MyRunnabl">
-<meta property="og:image" content="http://pic86.nipic.com/file/20151228/958400_145917002000_2.jpg">
-<meta property="og:updated_time" content="2016-01-22T05:25:40.396Z">
+是由于站点配置文件_config.yml中的deploy冒号后面加空格">
+<meta property="og:updated_time" content="2016-01-22T06:02:57.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java_thread">
-<meta name="twitter:description" content="corejava学习之多线程使用自定义线程机制，有两种实现方式
+<meta name="twitter:title" content="hexo常见问题">
+<meta name="twitter:description" content="1 执行hexo deploy 后，提示done，但是github上没更新
 
-实现java.lang.Runnable接口 class MyRunnable implements Runnable{
-    //实现run()方法
-    public void run(){
-        //task code
-    }
-}
- 接着,Thread t = new Thread(new MyRunnabl">
+是由于站点配置文件_config.yml中的deploy冒号后面加空格">
 
 
 
@@ -109,7 +90,7 @@
   };
 </script>
 
-  <title> java_thread | Hexo </title>
+  <title> hexo常见问题 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +220,7 @@
             
             
               
-                java_thread
+                hexo常见问题
               
             
           </h1>
@@ -251,8 +232,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-21T17:57:26+08:00" content="2016-01-21">
-              2016-01-21
+            <time itemprop="dateCreated" datetime="2016-01-22T13:54:38+08:00" content="2016-01-22">
+              2016-01-22
             </time>
           </span>
 
@@ -262,8 +243,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/21/demo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/demo/" itemprop="commentsCount"></span>
+                <a href="/2016/01/22/pro-of-hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/pro-of-hexo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -284,51 +265,28 @@
       
 
       
-        <h2 id="corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B"><a href="#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B" class="headerlink" title="corejava学习之多线程"></a>corejava学习之多线程</h2><p>使用自定义线程机制，有两种实现方式</p>
-<ol>
-<li>实现java.lang.Runnable接口<br><pre><br> <code><pre><code>class MyRunnable implements Runnable{
-    //实现run()方法
-    public void run(){
-        //task code
-    }
-}
-</code></pre> </code><br></pre><br>接着,Thread t = new Thread(new MyRunnable());//创建定义过任务的Thread实例<br>t.start();//启动改线程实例</li>
-<li>继续java.lang.Thread类<br> <pre><br> <code><pre><code>class MyThread extends Thread{
-    //重写run()方法
-    public void run(){
-        //task code
-    }
-}
-</code></pre> </code><br></pre><br>t.start();//启动改线程实例<br>一般来说，<strong>建议使用第一种方式</strong><br><img src="http://pic86.nipic.com/file/20151228/958400_145917002000_2.jpg" alt=""></li>
-</ol>
+        <p>1 执行hexo deploy 后，提示done，但是github上没更新</p>
+<blockquote>
+<p><strong>是由于站点配置文件_config.yml中的deploy冒号后面加空格</strong></p>
+</blockquote>
 
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/java-多线程/" rel="tag">#java 多线程</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/01/22/wangzhandaquan/" rel="next" title="一些有用的网站">
+                <i class="fa fa-chevron-left"></i> 一些有用的网站
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/22/wangzhandaquan/" rel="prev" title="一些有用的网站">
-                一些有用的网站 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -354,8 +312,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/21/demo/"
-           data-title="java_thread" data-url="http://wudixiaomai.github.io/2016/01/21/demo/">
+      <div class="ds-thread" data-thread-key="2016/01/22/pro-of-hexo/"
+           data-title="hexo常见问题" data-url="http://wudixiaomai.github.io/2016/01/22/pro-of-hexo/">
       </div>
     
   </div>
@@ -446,7 +404,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B"><span class="nav-number">1.</span> <span class="nav-text">corejava学习之多线程</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
