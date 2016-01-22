@@ -57,16 +57,40 @@
 
 
 
-<meta name="description" content="ddddddddsssssssssssssssssssssssskqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww d����">
+<meta name="description" content="corejava学习之多线程使用自定义线程机制，有两种实现方式
+
+实现java.lang.Runnable接口 class MyRunnable implements Runnable{
+    //实现run()方法
+    public void run(){
+        //task code
+    }
+}
+ 接着,Thread t = new Thread(new MyRunnabl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="demo">
+<meta property="og:title" content="java_thread">
 <meta property="og:url" content="http://wudixiaomai.github.io/2016/01/21/demo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="ddddddddsssssssssssssssssssssssskqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww d����">
-<meta property="og:updated_time" content="2016-01-22T01:38:01.254Z">
+<meta property="og:description" content="corejava学习之多线程使用自定义线程机制，有两种实现方式
+
+实现java.lang.Runnable接口 class MyRunnable implements Runnable{
+    //实现run()方法
+    public void run(){
+        //task code
+    }
+}
+ 接着,Thread t = new Thread(new MyRunnabl">
+<meta property="og:updated_time" content="2016-01-22T03:30:36.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="demo">
-<meta name="twitter:description" content="ddddddddsssssssssssssssssssssssskqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww d����">
+<meta name="twitter:title" content="java_thread">
+<meta name="twitter:description" content="corejava学习之多线程使用自定义线程机制，有两种实现方式
+
+实现java.lang.Runnable接口 class MyRunnable implements Runnable{
+    //实现run()方法
+    public void run(){
+        //task code
+    }
+}
+ 接着,Thread t = new Thread(new MyRunnabl">
 
 
 
@@ -84,7 +108,7 @@
   };
 </script>
 
-  <title> demo | Hexo </title>
+  <title> java_thread | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +228,7 @@
             
             
               
-                demo
+                java_thread
               
             
           </h1>
@@ -242,7 +266,23 @@
       
 
       
-        <p>ddddddddsssssssssssssssssssssssskqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww d����</p>
+        <h2 id="corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B"><a href="#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B" class="headerlink" title="corejava学习之多线程"></a>corejava学习之多线程</h2><p>使用自定义线程机制，有两种实现方式</p>
+<ol>
+<li>实现java.lang.Runnable接口<br><pre><br> <code><pre><code>class MyRunnable implements Runnable{
+    //实现run()方法
+    public void run(){
+        //task code
+    }
+}
+</code></pre> </code><br></pre><br>接着,Thread t = new Thread(new MyRunnable());//创建定义过任务的Thread实例<br>t.start();//启动改线程实例</li>
+<li>继续java.lang.Thread类<br> <pre><br> <code><pre><code>class MyThread extends Thread{
+    //重写run()方法
+    public void run(){
+        //task code
+    }
+}
+</code></pre> </code><br></pre><br>t.start();//启动改线程实例<br>一般来说，建议使用第一种方式</li>
+</ol>
 
       
     </div>
@@ -342,7 +382,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -374,7 +414,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B"><span class="nav-number">1.</span> <span class="nav-text">corejava学习之多线程</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
