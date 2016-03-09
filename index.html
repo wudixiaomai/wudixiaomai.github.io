@@ -222,8 +222,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/22/pro-of-hexo/" itemprop="url">
-                  hexo常见问题
+                <a class="post-title-link" href="/2016/03/09/Servlet入门/" itemprop="url">
+                  Servlet入门
                 </a>
               
             
@@ -236,8 +236,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-22T13:54:38+08:00" content="2016-01-22">
-              2016-01-22
+            <time itemprop="dateCreated" datetime="2016-03-09T03:01:49+08:00" content="2016-03-09">
+              2016-03-09
             </time>
           </span>
 
@@ -247,8 +247,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/22/pro-of-hexo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/pro-of-hexo/" itemprop="commentsCount"></span>
+                <a href="/2016/03/09/Servlet入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/09/Servlet入门/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -271,9 +271,24 @@
       
         
           
-            <p>1 执行hexo deploy 后，提示done，但是github上没更新</p>
+            <a id="more"></a>
+<p>###servlet接口方法</p>
+<ol>
+<li><p>生命周期相关方法(life-cycle)  </p>
+<ul>
+<li>init(ServletConfig config) 容器创建Servlet对象后，调用此方法来初始化该对象。</li>
+<li>service（ServletRequest,ServletResponse）为客户端请求提供服务。  </li>
+<li>destroy();service服务结束后，调用该方法来销毁。  </li>
+</ul>
+</li>
+<li>其他方法  <ul>
+<li>getServletConfig() 返回ServletConfig对象，包含初始化与启动参数。</li>
+<li>getServletInfo()   返回一个String对象（描述Servlet信息），如作者，版本，版权。</li>
+</ul>
+</li>
+</ol>
 <blockquote>
-<p><strong>是由于站点配置文件_config.yml中的deploy冒号后面加空格</strong></p>
+<p>动手自己写个servlet简单程序（不用eclipse），向浏览器输出Hello Servlet。  参见E:\Java\web\apache-tomcat-8.0.30\webapps\firstServlet。<br>Note:  注意引入Servlet类库，</p>
 </blockquote>
 
           
@@ -316,8 +331,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/22/wangzhandaquan/" itemprop="url">
-                  一些有用的网站
+                <a class="post-title-link" href="/2016/03/09/eclipse开发Servlet/" itemprop="url">
+                  eclipse开发Servlet
                 </a>
               
             
@@ -330,8 +345,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-22T13:31:44+08:00" content="2016-01-22">
-              2016-01-22
+            <time itemprop="dateCreated" datetime="2016-03-09T02:54:24+08:00" content="2016-03-09">
+              2016-03-09
             </time>
           </span>
 
@@ -341,8 +356,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/22/wangzhandaquan/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/wangzhandaquan/" itemprop="commentsCount"></span>
+                <a href="/2016/03/09/eclipse开发Servlet/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/09/eclipse开发Servlet/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -365,7 +380,207 @@
       
         
           
-            <p><a href="http://segmentfault.com/" target="_blank" rel="external">segmentfault</a>，这是个开发交流网站，你遇到的问题可以在这里提问。<br><a href="http://www.jianshu.com/" target="_blank" rel="external">简书</a>，交流故事，沟通想法。一个机遇内容分享的社区。<br><a href="https://www.zhihu.com/" target="_blank" rel="external">知乎</a>，收索问题、话题或人。</p>
+            <p>#eclipse 开发Servlet<br>1.新建工程。<br><img src="http://i.imgur.com/abevH6r.png" alt=""><br>百度了下，只有在你的应用的WebContent/WEB-INF/lib加上库，才会显示。<br>开发与配置比较简单，但是eclipse部署应用到自己的tomcat上出现问题，查阅了网上的一些资料。  </p>
+<p>##eclipse配置Tomcat服务器server locations的方法（转之<a href="http://yedward.net/?id=303）" target="_blank" rel="external">http://yedward.net/?id=303）</a><br>最近放弃了使用Myeclipse，转而使用eclipse作为开发工具，确实Myeclipse集成了太多东西，使得开发人员的配置越来越少，这不是个好事，使用eclipse后，有些地方就得自己去配置，比如配置J2EE需要的一些jar包，自己配置server服务器等等。</p>
+<p>我在使用eclipse配置Tomcat服务器的时候发现，默认情况下Tocmat把我们部署的项目放在了workspaces下面，而不是像Myeclipse默认的那样放在tomcat的安装路径下。</p>
+<p><img src="http://i.imgur.com/PgnIkWO.png" alt=""></p>
+<p>图1：Tomcat配置  </p>
+<p>从上图1中可以看到，Server Locations配置是灰色的，无法去修改，当然，这里我已经勾选成了Use Tomcat installation，即部署在Tomcat安装目录下。eclipse默认是勾选的第一项，即Use workspace metadata。那么，怎么去修改该配置呢？</p>
+<p><img src="http://i.imgur.com/65Ropfu.png" alt=""><br>图2：删除项目并Clean</p>
+<p>如上图2所示，想要Tomcat的Server配置可以修改，那么首先将server下面部署的所有项目都先remove掉，然后再在server上右键鼠标，选择Clean，clean完以后，再次双击server进入配置，即可发现配置可修改。</p>
+<p><img src="http://i.imgur.com/fyIy80S.png" alt=""><br>图3：修改server配置</p>
+<p>如上图3所示，配置已经可以修改了。</p>
+<p>有时候，eclipse启动tomcat的时候会出现：WARNING: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property ‘source’ to ‘org.eclipse.jst.jee.server:firstProject’ did not find a matching property 这样的问题，我也遇到过这样的报错信息。出现这个问题，可能是由于没有勾选server options下的Publish module contexts to separate XML files，我是通过勾选了该配置项解决了这个问题。</p>
+<p>最后，提醒下，修改了配置以后，别忘了保存修改。  </p>
+<p><strong>Servlet的线程安全问题？</strong><br>Servlet的线程安全问题只有在大量的并发访问时才会显现出来，并且很难发现，因此在编写Servlet程序时要特别注意。<font color="red">线程安全问题主要是由实例变量造成的,因此在Servlet中应避免使用实例变量。</font>如果应用程序设计无法避免使用实例变量，那么使用同步来保护要使用的实例变量，但为保证系统的最佳性能，应该同步可用性最小的代码路径。  </p>
+<p><strong>servletConfig与servletContext对象</strong>  </p>
+<p>##读取资源文件（servlet读配置文件与普通类读取资源文件）</p>
+<ol>
+<li><p><font color="red">Servlet读资源文件</font>首先获得一个ServletContext对象，在调用<br> ServletContext.getResourceAsStream(path)<br> ServletContext.getResource(path)<br> ServletContext.getRealpath(path)<br>选择其中一种方式:  </p>
+<pre>
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ ServletContext context = this.getServletContext();
+ //注意：资源文件路径应该是虚拟路径，不是实际路径（E:\Java\ides\workspace\day0\WebContent\db.properties）
+ java.io.InputStream in=context.getResourceAsStream("/db.properties");
+
+ //读properties文件
+ Properties p =new Properties();
+ p.load(in);
+ String url = p.getProperty("url");
+ String username = p.getProperty("username");
+ String password = p.getProperty("password");
+
+ System.out.println(url);
+ System.out.println(username);
+ System.out.println(password);
+}
+</pre></li>
+<li><font color="red">普通类读资源文件（重要）</font><br><pre><br>package cn.itcast.dao;</pre></li>
+</ol>
+<p>import java.io.IOException;<br>import java.io.InputStream;<br>import java.util.Properties;</p>
+<p>public class StudentDao {<br>    public String get() throws IOException{//类装载器读<br>        ClassLoader loader = StudentDao.class.getClassLoader();<br>        <font color="red">InputStream in = loader.getResourceAsStream(“db.properties”);//相对于claesses文件夹</font><br>        Properties p = new Properties();<br>        p.load(in);</p>
+<pre><code>    String url = p.getProperty(&quot;url&quot;);
+    String username = p.getProperty(&quot;username&quot;);
+    String password = p.getProperty(&quot;password&quot;);
+
+    System.out.println(url);
+    System.out.println(username);
+    System.out.println(password);
+    return null;
+}
+</code></pre><p>}<br><br>1.类装载器读资源文件存在一个问题，资源文件改动，获取的url,uername,password还是原来的信息。怎么办？  需要改成一下方式，注意红色字体变化。</p>
+<pre>
+ClassLoader loader  = StudentDao.class.getClassLoader();
+<font color="red">java.net.URL url = loader.getResource("db.properties");</font>
+String dbPath = url.getPath();
+FileInputStream in = new FileInputStream(dbPath);
+Properties p = new Properties();
+p.load(in);
+
+String db_url = p.getProperty("url");
+String username = p.getProperty("username");
+String password = p.getProperty("password");
+
+System.out.println(db_url);
+System.out.println(username);
+System.out.println(password);
+</pre>
+2.类装载器读资源文件一般不大。
+
+##Servlet高级应用----缓存设置  
+设置缓存有两种场景：
+>场景一是对于不经常变化的数据，在servlet里可以为其设置合理的缓存时间，以避免浏览器频繁的向服务器发送请求。  
+<pre>
+package cn.nyist.servlet.context;
+
+public class ServletDemo10 extends HttpServlet {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {  
+
+       String value="abc";
+       response.setDateHeader("Expires", System.currentTimeMillis()+1000*180);
+
+       response.getWriter().write(value);
+
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+        doGet(request,response);
+    }
+
+}
+</pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/09/方立勋day05_servlet /" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-09T02:27:43+08:00" content="2016-03-09">
+              2016-03-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/09/方立勋day05_servlet /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/09/方立勋day05_servlet /" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>title: 方立勋day05_servlet<br>date: 2016-01-22 13:31:44</p>
+<h2 id="tags_3A_eclipse_2CServlet"><a href="#tags_3A_eclipse_2CServlet" class="headerlink" title="tags: eclipse,Servlet"></a>tags: eclipse,Servlet </h2><p>###servlet接口方法</p>
+<ol>
+<li><p>生命周期相关方法(life-cycle)  </p>
+<ul>
+<li>init(ServletConfig config) 容器创建Servlet对象后，调用此方法来初始化该对象。</li>
+<li>service（ServletRequest,ServletResponse）为客户端请求提供服务。  </li>
+<li>destroy();service服务结束后，调用该方法来销毁。  </li>
+</ul>
+</li>
+<li>其他方法  <ul>
+<li>getServletConfig() 返回ServletConfig对象，包含初始化与启动参数。</li>
+<li>getServletInfo()   返回一个String对象（描述Servlet信息），如作者，版本，版权。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>动手自己写个servlet简单程序（不用eclipse），向浏览器输出Hello Servlet。  参见E:\Java\web\apache-tomcat-8.0.30\webapps\firstServlet。<br>Note:  注意引入Servlet类库，</p>
+</blockquote>
 
           
         
@@ -407,8 +622,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/21/demo/" itemprop="url">
-                  java_thread
+                <a class="post-title-link" href="/2016/03/09/遇到难题怎么办/" itemprop="url">
+                  遇到难题怎么办
                 </a>
               
             
@@ -421,8 +636,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-21T17:57:26+08:00" content="2016-01-21">
-              2016-01-21
+            <time itemprop="dateCreated" datetime="2016-03-09T02:27:21+08:00" content="2016-03-09">
+              2016-03-09
             </time>
           </span>
 
@@ -432,8 +647,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/21/demo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/demo/" itemprop="commentsCount"></span>
+                <a href="/2016/03/09/遇到难题怎么办/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/09/遇到难题怎么办/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -456,24 +671,727 @@
       
         
           
-            <h2 id="corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B"><a href="#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B" class="headerlink" title="corejava学习之多线程"></a>corejava学习之多线程</h2><p>使用自定义线程机制，有两种实现方式</p>
-<ol>
-<li>实现java.lang.Runnable接口<br><pre><br> <code><pre><code>class MyRunnable implements Runnable{
-    //实现run()方法
-    public void run(){
-        //task code
-    }
-}
-</code></pre> </code><br></pre><br>接着,Thread t = new Thread(new MyRunnable());//创建定义过任务的Thread实例<br>t.start();//启动改线程实例</li>
-<li>继续java.lang.Thread类<br> <pre><br> <code><pre><code>class MyThread extends Thread{
-    //重写run()方法
-    public void run(){
-        //task code
-    }
-}
-</code></pre> </code><br></pre><br>t.start();//启动改线程实例<br>一般来说，<strong>建议使用第一种方式</strong><br><img src="http://pic86.nipic.com/file/20151228/958400_145917002000_2.jpg" alt=""></li>
-</ol>
+            <p><img src="http://i.imgur.com/YGO2FqN.jpg" alt=""></p>
 
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/java推荐书籍/" itemprop="url">
+                  java推荐书籍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-07T02:45:00+08:00" content="2016-03-07">
+              2016-03-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/07/java推荐书籍/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/07/java推荐书籍/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><pre><br>一直有这么个想法，列一下我个人认为在学习和使用Java过程中可以推荐一读的书籍，给初学者或者想深入的朋友一些建议，帮助成长。推荐的的都是我自己读过，也会推荐一些朋友读过并且口碑不错的书籍。</pre></p>
+<p>一、基础类<br>1、《Thinking in java》，入门第一位是建立正确的概念。<br>2、《Core Java》，我没系统读过，这本书更贴近实践，更多API的介绍，同样，更新也更频繁。</p>
+<p>二、进阶类<br>1、《Effective Java》，在熟悉语法、API之后，你需要知道最佳实践和陷阱，没有比这本更好的。<br>2、《Java Puzzlers》，通过谜题介绍一些你可能没有注意到的边角料，作为趣味读物也不错<br>3、《深入Java虚拟机》，翻译一般，但不可不读，最好结合最新的JVM规范来读。</p>
+<p>三、特定领域<br>1、网络编程：<br>（1） O’Reilly的《Java nio》，很多人都推荐，我个人觉的一般，基本上只是个API更详细的说明文档,O’reilly的java系列很多都是这样。<br>（2）我更推荐这本《Fundamental networking in java》，由浅入深教你怎么做java网络编程，并且介绍很多背景知识，甚至介绍了各种最佳实践、网络编程模型以及Java socket在不同平台之间的差异等等。</p>
+<p>2、并发编程：<br>（1）《Java Concurrency in Practic》，并发领域必读经典。<br>（2）《Java并发编程：设计原则与模式》，同样是Doug lea的作品。<br>（3) 《java threads》，入门读物。</p>
+<p>3、web编程，这块我许久未接触了，就不推荐了，有兴趣的朋友可以补充下。</p>
+<p>四、模式与设计</p>
+<p>1、《设计模式》，GOF的经典。<br>2、《设计模式精解》，应该有最新版，个人认为更适合入门。<br>3、《Head first设计模式》，更轻松的入门读物。<br>4、《企业应用架构模式》<br>5、《分析模式——可复用对象模型》<br>6、《面向模式的软件体系结构》，国内貌似翻译了3卷，绝对经典，可惜翻译较差。<br>7、《重构——改善既有代码设计》,想写好代码必读。<br>8、《重构与模式》</p>
+<p>五、方法论<br>1、《敏捷软件开发》<br>2、《测试驱动开发》，你不一定要TDD，但是你一定要学会做单元测试。<br>3、《Agile Java》，也可以作为java入门读物。<br>4、《快速软件开发》<br>5、《面向对象分析与设计》，OO设计必读。<br>6、《Unix编程艺术》，打开你的眼界。</p>
+<p>六、Java之外</p>
+<p>1、《unix网络编程》，学习网络编程必读书。<br>2、《C++网络编程》上下两卷，介绍ACE的，但是其中对各种模式运用的介绍非常值的一读。<br>3、《Joel说软件》，编程文化<br>4、《人月神话》、《人件》<br>5、《卓有成效的程序员》，给我很大启发的一本书。<br>6、《程序员修炼之道》<br>7、《计算机程序的构造与解释》，必读<br>8、《算法导论》，可以作为参考书<br>9、《深入理解计算机系统》<br>10、《编译原理》龙书，最新版用java解释，我没有读完，顺便提下。<br><br>转之：<a href="http://jm-blog.aliapp.com/?p=522" target="_blank" rel="external">http://jm-blog.aliapp.com/?p=522&lt;/a.</a></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/java学习方法/" itemprop="url">
+                  java学习方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-07T02:21:38+08:00" content="2016-03-07">
+              2016-03-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/07/java学习方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/07/java学习方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre> 
+首先java 完全可以在半年之内学通，只要你确实用心学，这点完全不必担心。 
+如果你智商属于普通人并且完全没有编程的基础，例如c,c++，或者其他编程语言（我指 
+的是亲手编写一个完整的程序，helloworld 或者剪切字符串不算）我强烈不推荐你看书，不 
+然将浪费你大量的入门时间，甚至走许多弯路（比如做j2ee 的话swing 与swt 是基本不用 
+会的，多线程也只要会点基础即可），现在java 的视频教程满天飞，完全可以选一个讲解 
+清晰，条理明确的java 入门视频，这里我推荐马士兵的j2se 视频教程，以前我看的也是这 
+个，虽然现在看来里面有点小错，但不失为一个看起来愉快，学起来轻松的入门级教程，毕 
+竟刚开始的时候还是应该以培养兴趣为主，。 
+入了门之后就要选方向j2me 或j2ee,这两种你可以自己上百度搜下，其实都是满有前途 
+的，以后牛了双修也未尝不可。 
+我个人学的是j2ee 的内容，j2ee 说白了就是做网页，这时候你要从先从java 里脱身出来， 
+学些跟网页有关的东西： 
+1.html：很简单的东西不是太笨的话半天左右即可搞定 
+2.js：易学难精，想速度找工作不必花太多时间，随便买本javascript 书略读并备查 推荐： 
+JavaScript 高级程序设计；JavaScript 权威指南 
+3.数据库：如果没有基础的话，建议多花时间，至少一个月,开始建议用mysql,然后是oracle, 
+然后是sqlserver,这段时间最关键的就是sql 语言的编写，关系到你今后笔试的成败，一定 
+要自己多练，多在网上找笔试题做。 
+5.xml 就是一种封装数据的格式，没啥好学的，练习一下怎么用dom4j 或者jdom 读写xml 
+即可，可以直接去网上下有注释的例子程序来看看，比看视频看书快多了。 
+6.jsp,servlet,tomcat: 这段时间说白了就是用jsp 来做个网站，学习方法也很多种，可以 
+看书比如java web 开发详解，我一同学就是看这本书看会的。 
+也可以继续看视频比如尚学堂的jsp,servlet。 
+7.学再多不实践也是不行的，这时候可以自己搞个小项目了，可以参考尚学堂shopping 
+视频，bbs 视频，不过这两个项目练练手可以，别往简历上写，太丢脸了。这其中还有很多 
+小工具，例如jxl 的excel 读写，jfreechat 的图表生成等等，实在不行进公司再学也行，因 
+为不一定每家公司都用这些东西。 
+8.开始进入框架时代，框架说白了就是加速开发的工具，内在原理还是以上的那些东西 
+主要是3 大框架： 
+mvc 框架:struts,struts2,jsf 
+or 映射框架:hibernate,ibatis 
+业务框架:spring 
+重量级框架:ejb 
+每种挑一样学即可，因为大概都差不多，学了一种同类产品可以在3 天内搞定 
+学习方法分两类 
+1.看视频：时间长，要有耐性，估计全看完要1 个半月，基本可以学全开发用的东西， 
+但是对内在原理了解不深。 
+2.看网上资料，看书：速度因人而已，领悟力强的半个月就能搞定，学的东西还比看视 
+频多，毕竟学到这阶段都有点基础了，可以研究下程度更深的东西，如果自觉不够聪明就别 
+勉强了，说不定3 个月还云里雾里。 
+当年我基本是2 种结合，一边利用上无聊课的时间看书，大学这种课应该还不算少，视 
+频如果觉得会了就拉过去。 
+视频主要是2 家，尚学堂的够全面，但不够深入，学起来比较简单。 
+传知播客够深入，也全面，但是学起来比较难。 
+9.最后一个，在我面试的经历中几乎必问的东西，AJAX 
+首先是搞清楚原理，最基础的那段js 调用服务器的代码必背， 
+然后是学一个ajax 框架，推荐jquery 学起来简单，ext 备选，用的人多。 
+10.webservice,ant，gis 等等等等。 
+这些东西笔试面试最多问你做没做过，基本不影响你进公司，以后有机会就在项目中学。 
+11.面试之前自己做一个拿的出手的项目，不需要太大，4，5 张表即可，但一 
+定要够花哨，ssh 框架全用上，ajax 必用，报表功能必有，面试的时候就拿这项 
+目猛吹，然后源码丢给他，基本就没啥问题了（美工直接上网抄，或者上网找个 
+现成的项目扒光后台全部自己写）。 
+</pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/javaIO/" itemprop="url">
+                  java I/O
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-07T01:55:55+08:00" content="2016-03-07">
+              2016-03-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/07/javaIO/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/07/javaIO/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://i.imgur.com/tSpifo1.png" alt="">  </p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://i.imgur.com/T5RG2S0.png" alt="">  </h2><p><img src="http://i.imgur.com/cuHgO8f.png" alt=""><br><img src="http://i.imgur.com/TBaXFN2.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/06/day0306/" itemprop="url">
+                  day0306
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-06T23:13:34+08:00" content="2016-03-06">
+              2016-03-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/06/day0306/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/day0306/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###request常用方法必须熟悉，针对HTTP请求的3个部分的处理  </p>
+<p>###request常见应用1</p>
+<ul>
+<li>防盗链  <pre>
+Referer头会记录来访URL
+String referer=request.getHeader("Referer");
+If(referer==null||!referer.startWith("http://localhost")){
+response.sendRedirect("/day06/index.jsp");
+Return;
+}
+</pre></li>
+<li>各种表单输入项数据的获取<br>  1.text、password、radio、checkbox、<br>  2.file、select、textarea、 hidden、<br>  3.image、button给js编程用  </li>
+<li><p>请求参数的中文乱码问题<br><img src="http://i.imgur.com/WIR3GxN.png" alt="">  </p>
+<p>  当表单的method=”post”,用以下处理。<br>  <pre><br>  request.setCharacterEncoding(“UTF-8”);//要加上这一句，设置响应体中文字符编码<br>  String username = request.getParameter(“username”);<br>  //或者改下tomcat的配置<br>  </pre><br>  当表单的method=”get”,用以下处理。<br>  <pre><br>  new  String(username.getBytes(“ISO-8859-1”), “UTF-8”);<br>  //或者改下tomcat配置 URIEncoding，<font color="red">不建议使用</font><br>  </pre><br>  以上为方立勋说的方式。 </p>
+<blockquote>
+<p>自己查了下官网的文档有关tomcat的配置说明，<font color="red">tomcat8</font>默认以utf-8解码如这种URI中带着这种编码%E9%99%88%E7%AE%80%E5%8D%95（陈简单）编码的请求数据。  </p>
+</blockquote>
+<p>  结论：当get请求时，URI带着这种<img src="http://i.imgur.com/x5NRNug.png" alt=""><br>  tomcat8默认用的是utf-8。而使用post时，一定要request.setCharacterEncoding(“UTF-8”);</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/06/tools/" itemprop="url">
+                  工具
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-06T02:57:11+08:00" content="2016-03-06">
+              2016-03-06
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/06/tools/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/tools/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre>
+之前在网上找个假的，只能看，不能创建自己的DB; 或者 不能破解的，比较伤脑筋。
+
+偶在这里提供一个 可长期使用的版本。
+
+
+PowerDesigner165_破解文件.rar   
+
+http://pan.baidu.com/s/1hqEDUCG    636KB
+
+
+PowerDesigner165_Evaluation.exe  有点大, 809MB
+http://pan.baidu.com/s/1mgqjmpa  
+
+其它：
+
+PowerDesigner使用教程
+http://www.cnblogs.com/langtianya/archive/2013/03/08/2949118.html
+
+CodeSmith和PowerDesigner的使用安装和数据库创建(原创系列教程)
+http://www.cnblogs.com/huangcong/archive/2010/06/14/1757957.html
+</pre>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/05/day0305/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-05T19:27:16+08:00" content="2016-03-05">
+              2016-03-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/05/day0305/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/05/day0305/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="title_3A_eclipse__u5F00_u53D1Servlet"><a href="#title_3A_eclipse__u5F00_u53D1Servlet" class="headerlink" title="title: eclipse 开发Servlet"></a>title: eclipse 开发Servlet  </h2><p>##HttpServletResponse</p>
+<p>###向客户端（浏览器）输出中文乱码的问题 ，<strong>resp.getOutputStream()用法问题</strong></p>
+<pre>
+String data = "中文";
+resp.getOutputStream().write(data.getBytes());
+</pre>
+这个并不会乱码。 
+
+
+<pre>
+String data = "中文";
+resp.getOutputStream().write(data.getBytes("UTF-8"));
+</pre>  
+这个会乱码，为什么呢？  
+
+中文字体变成字节，查的是UTF8码表，再以流的形式输出给浏览器时，浏览器接收到流数据，默认以GB2312编码显示数据，所以造成乱码。
+>解决方式  
+
+解决中文乱码问题，通知浏览器以UTF-8的形式显示数据  
+
+1. resp.setHeader("content-type", <font color="red">"text/html;charset=utf-8"</font>); //不要写错，写错了会下载的。
+2. resp.setContentType("text/html;charset=utf-8");  
+
+3. <meta\>模拟一个http响应头  
+<pre>
+resp.getOutputStream().write("<meta http-equiv="content-type" content="text/html; charset=utf-8">".getBytes()); meta标签显示问题请看，markdown文件信息
+resp.getOutputStream().write("中国".getBytes("UTF-8"));
+</pre>
+注意：不同浏览器效果不同，IE11可以正常解析，谷歌将<meta>数据当做文本显示。
+###向客户端（浏览器）输出数字的问题  **resp.getOutputStream()用法问题**
+<pre> 
+req.getOutputStream().write(50);//不能正常显示
+req.getOutputStream().write((50+"").getBytes()); 
+</pre>
+
+<p>###向客户端（浏览器）输出中文的问题   <strong>resp.getWriter()用法问题</strong>  </p>
+<p><pre><br>String data = “中国”;<br>PrintWriter pw = resp.getWriter();<br>pw.write(data);//无法正常显示<br>//——–改成下面</pre></p>
+<p><font color="red">resp.setCharacterEncoding(“UTF-8”);//更改response码表,通知服务器用utf-8的方式读取数据，写给客户机<br>//resp.setHeader(“content-type”, “text/html;charset=utf-8”);//指定浏览器解析该html文档用utf-8<br>resp.setContentType(“text/html;charset=utf-8”);//简单设置<br></font>String data = “中国”;<br>PrintWriter pw = resp.getWriter();<br>pw.write(data);<br>//——最简单的方式<font color="red"><br>resp.setContentType(“text/html;charset=utf-8”);//简单设置<br></font>String data = “中国”;<br>PrintWriter pw = resp.getWriter();<br>pw.write(data);<br></p>
+<p>###文件下载及中文文件下载方式 </p>
+<p><pre><br>public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {<br>    //这只是转发请求到图片资源<br>    //RequestDispatcher rd = this.getServletContext().getRequestDispatcher(“/down/18岁的天空.jpg”);<br>    //rd.forward(req, resp);<br>    //1.获取请求资源的文件名（不包含实际路径）<br>    String realPath = this.getServletContext().getRealPath(“/download/18岁的天空.jpg”);<br>    //realPath = E:\Java\web\apache-tomcat-8.0.30\webapps\day06\download\18岁的天空.jpg<br>    String filename = realPath.substring(realPath.lastIndexOf(“\“)+1);</pre></p>
+<pre><code>///2.设置http响应头（下载头），filename要给定URL编码,不然下载时文件名乱码。
+resp.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename=&quot;+URLEncoder.encode(filename, &quot;utf-8&quot;));
+//3.关联图片文件，读写操作
+FileInputStream in = new FileInputStream(realPath);
+System.out.println(in);
+byte[] buffer = new byte[1042];
+int len=0;
+while((len=in.read(buffer))&gt;0){
+    resp.getOutputStream().write(buffer, 0, len);
+}
+if(in!=null){
+    in.close();
+}
+</code></pre><p>}<br> </p>
+<p>###servlet生成随机图片。用于验证码  </p>
+<p>google下验证码生成java,有时间研究下，暂时没空。</p>
+<p>###http响应头refresh的使用  </p>
+<p><pre><br>public class ResponseDemo5 extends HttpServlet {<br>    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {<br>        String data = “中国人”;</pre></p>
+<pre><code>    &lt;font color=&quot;red&quot;&gt;response.setHeader(&quot;Refresh&quot;, &quot;3;http://www.baidu.com&quot;);&lt;/font&gt;
+    response.setCharacterEncoding(&quot;UTF-8&quot;);
+    response.setContentType(&quot;text/html;charset=utf-8&quot;);
+    System.out.println(&quot;1111111111111&quot;);
+    response.getWriter().write(data);
+}
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    doGet(request, response);
+}
+</code></pre><p>}</p>
+<p></p>
+<p>###response响应的请求重定向   </p>
+<p><pre><br>response.setStatus(302);<br>response.setHeader(“location”, “/day05/view.jsp”);//<font color="red">可以使跨应用的资源</font><br>//—简便方法<br>response.sendRedirect(“/day05/view.jsp”);<br></pre><br>重定向特点：地址栏会改变。     发2次请求<br>一般用于登陆，用户登陆成功后能看到页面地址变化。</p>
+</meta\>
           
         
       
@@ -497,6 +1415,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -535,7 +1457,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -549,7 +1471,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
