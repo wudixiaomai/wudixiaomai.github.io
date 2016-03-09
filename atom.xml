@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>jchen&#39;s blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wudixiaomai.github.io/"/>
+  <updated>2016-03-08T19:25:20.331Z</updated>
+  <id>http://wudixiaomai.github.io/</id>
+  
+  <author>
+    <name>Chen zh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Servlet入门</title>
+    <link href="http://wudixiaomai.github.io/2016/03/09/Servlet%E5%85%A5%E9%97%A8/"/>
+    <id>http://wudixiaomai.github.io/2016/03/09/Servlet入门/</id>
+    <published>2016-03-08T19:01:49.000Z</published>
+    <updated>2016-03-08T19:25:20.331Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;###servlet接口方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;生命周期相关方法(life-cycle)  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;init(ServletConfig config) 容器创建Servlet对象后，调用此方法来初始化该对象。&lt;/li&gt;
+&lt;li&gt;service（ServletRequest,ServletResponse）为客户端请求提供服务。  &lt;/li&gt;
+&lt;li&gt;destroy();service服务结束后，调用该方法来销毁。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其他方法  &lt;ul&gt;
+&lt;li&gt;getServletConfig() 返回ServletConfig对象，包含初始化与启动参数。&lt;/li&gt;
+&lt;li&gt;getServletInfo()   返回一个String对象（描述Servlet信息），如作者，版本，版权。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;动手自己写个servlet简单程序（不用eclipse），向浏览器输出Hello Servlet。  参见E:\Java\web\apache-tomcat-8.0.30\webapps\firstServlet。&lt;br&gt;Note:  注意引入Servlet类库，&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;###servlet接口方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;生命周期相关方法(life-cycle)  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;init(ServletConfig config) 容器创建Servlet对象后，调用此方法来初始化该
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>eclipse开发Servlet</title>
+    <link href="http://wudixiaomai.github.io/2016/03/09/eclipse%E5%BC%80%E5%8F%91Servlet/"/>
+    <id>http://wudixiaomai.github.io/2016/03/09/eclipse开发Servlet/</id>
+    <published>2016-03-08T18:54:24.000Z</published>
+    <updated>2016-03-08T18:57:30.896Z</updated>
+    
+    <content type="html">&lt;p&gt;#eclipse 开发Servlet&lt;br&gt;1.新建工程。&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/abevH6r.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;百度了下，只有在你的应用的WebContent/WEB-INF/lib加上库，才会显示。&lt;br&gt;开发与配置比较简单，但是eclipse部署应用到自己的tomcat上出现问题，查阅了网上的一些资料。  &lt;/p&gt;
+&lt;p&gt;##eclipse配置Tomcat服务器server locations的方法（转之&lt;a href=&quot;http://yedward.net/?id=303）&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://yedward.net/?id=303）&lt;/a&gt;&lt;br&gt;最近放弃了使用Myeclipse，转而使用eclipse作为开发工具，确实Myeclipse集成了太多东西，使得开发人员的配置越来越少，这不是个好事，使用eclipse后，有些地方就得自己去配置，比如配置J2EE需要的一些jar包，自己配置server服务器等等。&lt;/p&gt;
+&lt;p&gt;我在使用eclipse配置Tomcat服务器的时候发现，默认情况下Tocmat把我们部署的项目放在了workspaces下面，而不是像Myeclipse默认的那样放在tomcat的安装路径下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/PgnIkWO.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;图1：Tomcat配置  &lt;/p&gt;
+&lt;p&gt;从上图1中可以看到，Server Locations配置是灰色的，无法去修改，当然，这里我已经勾选成了Use Tomcat installation，即部署在Tomcat安装目录下。eclipse默认是勾选的第一项，即Use workspace metadata。那么，怎么去修改该配置呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/65Ropfu.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;图2：删除项目并Clean&lt;/p&gt;
+&lt;p&gt;如上图2所示，想要Tomcat的Server配置可以修改，那么首先将server下面部署的所有项目都先remove掉，然后再在server上右键鼠标，选择Clean，clean完以后，再次双击server进入配置，即可发现配置可修改。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/fyIy80S.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;图3：修改server配置&lt;/p&gt;
+&lt;p&gt;如上图3所示，配置已经可以修改了。&lt;/p&gt;
+&lt;p&gt;有时候，eclipse启动tomcat的时候会出现：WARNING: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property ‘source’ to ‘org.eclipse.jst.jee.server:firstProject’ did not find a matching property 这样的问题，我也遇到过这样的报错信息。出现这个问题，可能是由于没有勾选server options下的Publish module contexts to separate XML files，我是通过勾选了该配置项解决了这个问题。&lt;/p&gt;
+&lt;p&gt;最后，提醒下，修改了配置以后，别忘了保存修改。  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Servlet的线程安全问题？&lt;/strong&gt;&lt;br&gt;Servlet的线程安全问题只有在大量的并发访问时才会显现出来，并且很难发现，因此在编写Servlet程序时要特别注意。&lt;font color=&quot;red&quot;&gt;线程安全问题主要是由实例变量造成的,因此在Servlet中应避免使用实例变量。&lt;/font&gt;如果应用程序设计无法避免使用实例变量，那么使用同步来保护要使用的实例变量，但为保证系统的最佳性能，应该同步可用性最小的代码路径。  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;servletConfig与servletContext对象&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;##读取资源文件（servlet读配置文件与普通类读取资源文件）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;font color=&quot;red&quot;&gt;Servlet读资源文件&lt;/font&gt;首先获得一个ServletContext对象，在调用&lt;br&gt; ServletContext.getResourceAsStream(path)&lt;br&gt; ServletContext.getResource(path)&lt;br&gt; ServletContext.getRealpath(path)&lt;br&gt;选择其中一种方式:  &lt;/p&gt;
+&lt;pre&gt;
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ ServletContext context = this.getServletContext();
+ //注意：资源文件路径应该是虚拟路径，不是实际路径（E:\Java\ides\workspace\day0\WebContent\db.properties）
+ java.io.InputStream in=context.getResourceAsStream(&quot;/db.properties&quot;);
+
+ //读properties文件
+ Properties p =new Properties();
+ p.load(in);
+ String url = p.getProperty(&quot;url&quot;);
+ String username = p.getProperty(&quot;username&quot;);
+ String password = p.getProperty(&quot;password&quot;);
+
+ System.out.println(url);
+ System.out.println(username);
+ System.out.println(password);
+}
+&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font color=&quot;red&quot;&gt;普通类读资源文件（重要）&lt;/font&gt;&lt;br&gt;&lt;pre&gt;&lt;br&gt;package cn.itcast.dao;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;import java.io.IOException;&lt;br&gt;import java.io.InputStream;&lt;br&gt;import java.util.Properties;&lt;/p&gt;
+&lt;p&gt;public class StudentDao {&lt;br&gt;    public String get() throws IOException{//类装载器读&lt;br&gt;        ClassLoader loader = StudentDao.class.getClassLoader();&lt;br&gt;        &lt;font color=&quot;red&quot;&gt;InputStream in = loader.getResourceAsStream(“db.properties”);//相对于claesses文件夹&lt;/font&gt;&lt;br&gt;        Properties p = new Properties();&lt;br&gt;        p.load(in);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    String url = p.getProperty(&amp;quot;url&amp;quot;);
+    String username = p.getProperty(&amp;quot;username&amp;quot;);
+    String password = p.getProperty(&amp;quot;password&amp;quot;);
+
+    System.out.println(url);
+    System.out.println(username);
+    System.out.println(password);
+    return null;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;br&gt;&lt;br&gt;1.类装载器读资源文件存在一个问题，资源文件改动，获取的url,uername,password还是原来的信息。怎么办？  需要改成一下方式，注意红色字体变化。&lt;/p&gt;
+&lt;pre&gt;
+ClassLoader loader  = StudentDao.class.getClassLoader();
+&lt;font color=&quot;red&quot;&gt;java.net.URL url = loader.getResource(&quot;db.properties&quot;);&lt;/font&gt;
+String dbPath = url.getPath();
+FileInputStream in = new FileInputStream(dbPath);
+Properties p = new Properties();
+p.load(in);
+
+String db_url = p.getProperty(&quot;url&quot;);
+String username = p.getProperty(&quot;username&quot;);
+String password = p.getProperty(&quot;password&quot;);
+
+System.out.println(db_url);
+System.out.println(username);
+System.out.println(password);
+&lt;/pre&gt;
+2.类装载器读资源文件一般不大。
+
+##Servlet高级应用----缓存设置  
+设置缓存有两种场景：
+&gt;场景一是对于不经常变化的数据，在servlet里可以为其设置合理的缓存时间，以避免浏览器频繁的向服务器发送请求。  
+&lt;pre&gt;
+package cn.nyist.servlet.context;
+
+public class ServletDemo10 extends HttpServlet {
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {  
+
+       String value=&quot;abc&quot;;
+       response.setDateHeader(&quot;Expires&quot;, System.currentTimeMillis()+1000*180);
+
+       response.getWriter().write(value);
+
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+        doGet(request,response);
+    }
+
+}
+&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#eclipse 开发Servlet&lt;br&gt;1.新建工程。&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/abevH6r.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;百度了下，只有在你的应用的WebContent/WEB-INF/lib加上库，才会显示。&lt;br&gt;开发与
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wudixiaomai.github.io/2016/03/09/%E6%96%B9%E7%AB%8B%E5%8B%8Bday05_servlet%20/"/>
+    <id>http://wudixiaomai.github.io/2016/03/09/方立勋day05_servlet /</id>
+    <published>2016-03-08T18:27:43.934Z</published>
+    <updated>2016-03-08T18:25:35.626Z</updated>
+    
+    <content type="html">&lt;p&gt;title: 方立勋day05_servlet&lt;br&gt;date: 2016-01-22 13:31:44&lt;/p&gt;
+&lt;h2 id=&quot;tags_3A_eclipse_2CServlet&quot;&gt;&lt;a href=&quot;#tags_3A_eclipse_2CServlet&quot; class=&quot;headerlink&quot; title=&quot;tags: eclipse,Servlet&quot;&gt;&lt;/a&gt;tags: eclipse,Servlet &lt;/h2&gt;&lt;p&gt;###servlet接口方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;生命周期相关方法(life-cycle)  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;init(ServletConfig config) 容器创建Servlet对象后，调用此方法来初始化该对象。&lt;/li&gt;
+&lt;li&gt;service（ServletRequest,ServletResponse）为客户端请求提供服务。  &lt;/li&gt;
+&lt;li&gt;destroy();service服务结束后，调用该方法来销毁。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其他方法  &lt;ul&gt;
+&lt;li&gt;getServletConfig() 返回ServletConfig对象，包含初始化与启动参数。&lt;/li&gt;
+&lt;li&gt;getServletInfo()   返回一个String对象（描述Servlet信息），如作者，版本，版权。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;动手自己写个servlet简单程序（不用eclipse），向浏览器输出Hello Servlet。  参见E:\Java\web\apache-tomcat-8.0.30\webapps\firstServlet。&lt;br&gt;Note:  注意引入Servlet类库，&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;title: 方立勋day05_servlet&lt;br&gt;date: 2016-01-22 13:31:44&lt;/p&gt;
+&lt;h2 id=&quot;tags_3A_eclipse_2CServlet&quot;&gt;&lt;a href=&quot;#tags_3A_eclipse_2CServlet&quot; class=&quot;h
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>遇到难题怎么办</title>
+    <link href="http://wudixiaomai.github.io/2016/03/09/%E9%81%87%E5%88%B0%E9%9A%BE%E9%A2%98%E6%80%8E%E4%B9%88%E5%8A%9E/"/>
+    <id>http://wudixiaomai.github.io/2016/03/09/遇到难题怎么办/</id>
+    <published>2016-03-08T18:27:21.828Z</published>
+    <updated>2016-03-07T16:44:57.020Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/YGO2FqN.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/YGO2FqN.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java推荐书籍</title>
+    <link href="http://wudixiaomai.github.io/2016/03/07/java%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D/"/>
+    <id>http://wudixiaomai.github.io/2016/03/07/java推荐书籍/</id>
+    <published>2016-03-06T18:45:00.924Z</published>
+    <updated>2016-03-06T18:45:00.924Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;pre&gt;&lt;br&gt;一直有这么个想法，列一下我个人认为在学习和使用Java过程中可以推荐一读的书籍，给初学者或者想深入的朋友一些建议，帮助成长。推荐的的都是我自己读过，也会推荐一些朋友读过并且口碑不错的书籍。&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;一、基础类&lt;br&gt;1、《Thinking in java》，入门第一位是建立正确的概念。&lt;br&gt;2、《Core Java》，我没系统读过，这本书更贴近实践，更多API的介绍，同样，更新也更频繁。&lt;/p&gt;
+&lt;p&gt;二、进阶类&lt;br&gt;1、《Effective Java》，在熟悉语法、API之后，你需要知道最佳实践和陷阱，没有比这本更好的。&lt;br&gt;2、《Java Puzzlers》，通过谜题介绍一些你可能没有注意到的边角料，作为趣味读物也不错&lt;br&gt;3、《深入Java虚拟机》，翻译一般，但不可不读，最好结合最新的JVM规范来读。&lt;/p&gt;
+&lt;p&gt;三、特定领域&lt;br&gt;1、网络编程：&lt;br&gt;（1） O’Reilly的《Java nio》，很多人都推荐，我个人觉的一般，基本上只是个API更详细的说明文档,O’reilly的java系列很多都是这样。&lt;br&gt;（2）我更推荐这本《Fundamental networking in java》，由浅入深教你怎么做java网络编程，并且介绍很多背景知识，甚至介绍了各种最佳实践、网络编程模型以及Java socket在不同平台之间的差异等等。&lt;/p&gt;
+&lt;p&gt;2、并发编程：&lt;br&gt;（1）《Java Concurrency in Practic》，并发领域必读经典。&lt;br&gt;（2）《Java并发编程：设计原则与模式》，同样是Doug lea的作品。&lt;br&gt;（3) 《java threads》，入门读物。&lt;/p&gt;
+&lt;p&gt;3、web编程，这块我许久未接触了，就不推荐了，有兴趣的朋友可以补充下。&lt;/p&gt;
+&lt;p&gt;四、模式与设计&lt;/p&gt;
+&lt;p&gt;1、《设计模式》，GOF的经典。&lt;br&gt;2、《设计模式精解》，应该有最新版，个人认为更适合入门。&lt;br&gt;3、《Head first设计模式》，更轻松的入门读物。&lt;br&gt;4、《企业应用架构模式》&lt;br&gt;5、《分析模式——可复用对象模型》&lt;br&gt;6、《面向模式的软件体系结构》，国内貌似翻译了3卷，绝对经典，可惜翻译较差。&lt;br&gt;7、《重构——改善既有代码设计》,想写好代码必读。&lt;br&gt;8、《重构与模式》&lt;/p&gt;
+&lt;p&gt;五、方法论&lt;br&gt;1、《敏捷软件开发》&lt;br&gt;2、《测试驱动开发》，你不一定要TDD，但是你一定要学会做单元测试。&lt;br&gt;3、《Agile Java》，也可以作为java入门读物。&lt;br&gt;4、《快速软件开发》&lt;br&gt;5、《面向对象分析与设计》，OO设计必读。&lt;br&gt;6、《Unix编程艺术》，打开你的眼界。&lt;/p&gt;
+&lt;p&gt;六、Java之外&lt;/p&gt;
+&lt;p&gt;1、《unix网络编程》，学习网络编程必读书。&lt;br&gt;2、《C++网络编程》上下两卷，介绍ACE的，但是其中对各种模式运用的介绍非常值的一读。&lt;br&gt;3、《Joel说软件》，编程文化&lt;br&gt;4、《人月神话》、《人件》&lt;br&gt;5、《卓有成效的程序员》，给我很大启发的一本书。&lt;br&gt;6、《程序员修炼之道》&lt;br&gt;7、《计算机程序的构造与解释》，必读&lt;br&gt;8、《算法导论》，可以作为参考书&lt;br&gt;9、《深入理解计算机系统》&lt;br&gt;10、《编译原理》龙书，最新版用java解释，我没有读完，顺便提下。&lt;br&gt;&lt;br&gt;转之：&lt;a href=&quot;http://jm-blog.aliapp.com/?p=522&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jm-blog.aliapp.com/?p=522&amp;lt;/a.&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;pre&gt;&lt;br&gt;一直有这么个想法，列一下我个人认为在学习和使用Java过程中可以推荐一读的书籍，给初学者或者想深入的朋友一些建议，帮助成长。推荐的的都是我自己读过，也会推荐一些朋友读过并且口碑不错的书籍。&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;一、基础类&lt;br&gt;1、《Thinking
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java学习方法</title>
+    <link href="http://wudixiaomai.github.io/2016/03/07/java%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    <id>http://wudixiaomai.github.io/2016/03/07/java学习方法/</id>
+    <published>2016-03-06T18:21:38.189Z</published>
+    <updated>2016-03-06T18:21:38.189Z</updated>
+    
+    <content type="html">&lt;pre&gt; 
+首先java 完全可以在半年之内学通，只要你确实用心学，这点完全不必担心。 
+如果你智商属于普通人并且完全没有编程的基础，例如c,c++，或者其他编程语言（我指 
+的是亲手编写一个完整的程序，helloworld 或者剪切字符串不算）我强烈不推荐你看书，不 
+然将浪费你大量的入门时间，甚至走许多弯路（比如做j2ee 的话swing 与swt 是基本不用 
+会的，多线程也只要会点基础即可），现在java 的视频教程满天飞，完全可以选一个讲解 
+清晰，条理明确的java 入门视频，这里我推荐马士兵的j2se 视频教程，以前我看的也是这 
+个，虽然现在看来里面有点小错，但不失为一个看起来愉快，学起来轻松的入门级教程，毕 
+竟刚开始的时候还是应该以培养兴趣为主，。 
+入了门之后就要选方向j2me 或j2ee,这两种你可以自己上百度搜下，其实都是满有前途 
+的，以后牛了双修也未尝不可。 
+我个人学的是j2ee 的内容，j2ee 说白了就是做网页，这时候你要从先从java 里脱身出来， 
+学些跟网页有关的东西： 
+1.html：很简单的东西不是太笨的话半天左右即可搞定 
+2.js：易学难精，想速度找工作不必花太多时间，随便买本javascript 书略读并备查 推荐： 
+JavaScript 高级程序设计；JavaScript 权威指南 
+3.数据库：如果没有基础的话，建议多花时间，至少一个月,开始建议用mysql,然后是oracle, 
+然后是sqlserver,这段时间最关键的就是sql 语言的编写，关系到你今后笔试的成败，一定 
+要自己多练，多在网上找笔试题做。 
+5.xml 就是一种封装数据的格式，没啥好学的，练习一下怎么用dom4j 或者jdom 读写xml 
+即可，可以直接去网上下有注释的例子程序来看看，比看视频看书快多了。 
+6.jsp,servlet,tomcat: 这段时间说白了就是用jsp 来做个网站，学习方法也很多种，可以 
+看书比如java web 开发详解，我一同学就是看这本书看会的。 
+也可以继续看视频比如尚学堂的jsp,servlet。 
+7.学再多不实践也是不行的，这时候可以自己搞个小项目了，可以参考尚学堂shopping 
+视频，bbs 视频，不过这两个项目练练手可以，别往简历上写，太丢脸了。这其中还有很多 
+小工具，例如jxl 的excel 读写，jfreechat 的图表生成等等，实在不行进公司再学也行，因 
+为不一定每家公司都用这些东西。 
+8.开始进入框架时代，框架说白了就是加速开发的工具，内在原理还是以上的那些东西 
+主要是3 大框架： 
+mvc 框架:struts,struts2,jsf 
+or 映射框架:hibernate,ibatis 
+业务框架:spring 
+重量级框架:ejb 
+每种挑一样学即可，因为大概都差不多，学了一种同类产品可以在3 天内搞定 
+学习方法分两类 
+1.看视频：时间长，要有耐性，估计全看完要1 个半月，基本可以学全开发用的东西， 
+但是对内在原理了解不深。 
+2.看网上资料，看书：速度因人而已，领悟力强的半个月就能搞定，学的东西还比看视 
+频多，毕竟学到这阶段都有点基础了，可以研究下程度更深的东西，如果自觉不够聪明就别 
+勉强了，说不定3 个月还云里雾里。 
+当年我基本是2 种结合，一边利用上无聊课的时间看书，大学这种课应该还不算少，视 
+频如果觉得会了就拉过去。 
+视频主要是2 家，尚学堂的够全面，但不够深入，学起来比较简单。 
+传知播客够深入，也全面，但是学起来比较难。 
+9.最后一个，在我面试的经历中几乎必问的东西，AJAX 
+首先是搞清楚原理，最基础的那段js 调用服务器的代码必背， 
+然后是学一个ajax 框架，推荐jquery 学起来简单，ext 备选，用的人多。 
+10.webservice,ant，gis 等等等等。 
+这些东西笔试面试最多问你做没做过，基本不影响你进公司，以后有机会就在项目中学。 
+11.面试之前自己做一个拿的出手的项目，不需要太大，4，5 张表即可，但一 
+定要够花哨，ssh 框架全用上，ajax 必用，报表功能必有，面试的时候就拿这项 
+目猛吹，然后源码丢给他，基本就没啥问题了（美工直接上网抄，或者上网找个 
+现成的项目扒光后台全部自己写）。 
+&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt; 
+首先java 完全可以在半年之内学通，只要你确实用心学，这点完全不必担心。 
+如果你智商属于普通人并且完全没有编程的基础，例如c,c++，或者其他编程语言（我指 
+的是亲手编写一个完整的程序，helloworld 或者剪切字符串不算）我强烈不推荐你看书，不 
+然将浪
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java I/O</title>
+    <link href="http://wudixiaomai.github.io/2016/03/07/javaIO/"/>
+    <id>http://wudixiaomai.github.io/2016/03/07/javaIO/</id>
+    <published>2016-03-06T17:55:55.000Z</published>
+    <updated>2016-03-06T18:10:14.812Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/tSpifo1.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://i.imgur.com/T5RG2S0.png&quot; alt=&quot;&quot;&gt;  &lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/cuHgO8f.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/TBaXFN2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/tSpifo1.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://i.imgur.co
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>day0306</title>
+    <link href="http://wudixiaomai.github.io/2016/03/06/day0306/"/>
+    <id>http://wudixiaomai.github.io/2016/03/06/day0306/</id>
+    <published>2016-03-06T15:13:34.189Z</published>
+    <updated>2016-03-06T15:13:34.189Z</updated>
+    
+    <content type="html">&lt;p&gt;###request常用方法必须熟悉，针对HTTP请求的3个部分的处理  &lt;/p&gt;
+&lt;p&gt;###request常见应用1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;防盗链  &lt;pre&gt;
+Referer头会记录来访URL
+String referer=request.getHeader(&quot;Referer&quot;);
+If(referer==null||!referer.startWith(&quot;http://localhost&quot;)){
+response.sendRedirect(&quot;/day06/index.jsp&quot;);
+Return;
+}
+&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;各种表单输入项数据的获取&lt;br&gt;  1.text、password、radio、checkbox、&lt;br&gt;  2.file、select、textarea、 hidden、&lt;br&gt;  3.image、button给js编程用  &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;请求参数的中文乱码问题&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/WIR3GxN.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;  当表单的method=”post”,用以下处理。&lt;br&gt;  &lt;pre&gt;&lt;br&gt;  request.setCharacterEncoding(“UTF-8”);//要加上这一句，设置响应体中文字符编码&lt;br&gt;  String username = request.getParameter(“username”);&lt;br&gt;  //或者改下tomcat的配置&lt;br&gt;  &lt;/pre&gt;&lt;br&gt;  当表单的method=”get”,用以下处理。&lt;br&gt;  &lt;pre&gt;&lt;br&gt;  new  String(username.getBytes(“ISO-8859-1”), “UTF-8”);&lt;br&gt;  //或者改下tomcat配置 URIEncoding，&lt;font color=&quot;red&quot;&gt;不建议使用&lt;/font&gt;&lt;br&gt;  &lt;/pre&gt;&lt;br&gt;  以上为方立勋说的方式。 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自己查了下官网的文档有关tomcat的配置说明，&lt;font color=&quot;red&quot;&gt;tomcat8&lt;/font&gt;默认以utf-8解码如这种URI中带着这种编码%E9%99%88%E7%AE%80%E5%8D%95（陈简单）编码的请求数据。  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  结论：当get请求时，URI带着这种&lt;img src=&quot;http://i.imgur.com/x5NRNug.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;  tomcat8默认用的是utf-8。而使用post时，一定要request.setCharacterEncoding(“UTF-8”);&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;###request常用方法必须熟悉，针对HTTP请求的3个部分的处理  &lt;/p&gt;
+&lt;p&gt;###request常见应用1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;防盗链  &lt;pre&gt;
+Referer头会记录来访URL
+String referer=request.getHeader(&quot;R
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>工具</title>
+    <link href="http://wudixiaomai.github.io/2016/03/06/tools/"/>
+    <id>http://wudixiaomai.github.io/2016/03/06/tools/</id>
+    <published>2016-03-05T18:57:11.916Z</published>
+    <updated>2016-03-05T18:57:11.916Z</updated>
+    
+    <content type="html">&lt;pre&gt;
+之前在网上找个假的，只能看，不能创建自己的DB; 或者 不能破解的，比较伤脑筋。
+
+偶在这里提供一个 可长期使用的版本。
+
+
+PowerDesigner165_破解文件.rar   
+
+http://pan.baidu.com/s/1hqEDUCG    636KB
+
+
+PowerDesigner165_Evaluation.exe  有点大, 809MB
+http://pan.baidu.com/s/1mgqjmpa  
+
+其它：
+
+PowerDesigner使用教程
+http://www.cnblogs.com/langtianya/archive/2013/03/08/2949118.html
+
+CodeSmith和PowerDesigner的使用安装和数据库创建(原创系列教程)
+http://www.cnblogs.com/huangcong/archive/2010/06/14/1757957.html
+&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;
+之前在网上找个假的，只能看，不能创建自己的DB; 或者 不能破解的，比较伤脑筋。
+
+偶在这里提供一个 可长期使用的版本。
+
+
+PowerDesigner165_破解文件.rar   
+
+http://pan.baidu.com/s/1hqEDUCG    636KB
+
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://wudixiaomai.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://wudixiaomai.github.io/2016/03/05/day0305/"/>
+    <id>http://wudixiaomai.github.io/2016/03/05/day0305/</id>
+    <published>2016-03-05T11:27:16.173Z</published>
+    <updated>2016-03-05T11:27:16.173Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;title_3A_eclipse__u5F00_u53D1Servlet&quot;&gt;&lt;a href=&quot;#title_3A_eclipse__u5F00_u53D1Servlet&quot; class=&quot;headerlink&quot; title=&quot;title: eclipse 开发Servlet&quot;&gt;&lt;/a&gt;title: eclipse 开发Servlet  &lt;/h2&gt;&lt;p&gt;##HttpServletResponse&lt;/p&gt;
+&lt;p&gt;###向客户端（浏览器）输出中文乱码的问题 ，&lt;strong&gt;resp.getOutputStream()用法问题&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;
+String data = &quot;中文&quot;;
+resp.getOutputStream().write(data.getBytes());
+&lt;/pre&gt;
+这个并不会乱码。 
+
+
+&lt;pre&gt;
+String data = &quot;中文&quot;;
+resp.getOutputStream().write(data.getBytes(&quot;UTF-8&quot;));
+&lt;/pre&gt;  
+这个会乱码，为什么呢？  
+
+中文字体变成字节，查的是UTF8码表，再以流的形式输出给浏览器时，浏览器接收到流数据，默认以GB2312编码显示数据，所以造成乱码。
+&gt;解决方式  
+
+解决中文乱码问题，通知浏览器以UTF-8的形式显示数据  
+
+1. resp.setHeader(&quot;content-type&quot;, &lt;font color=&quot;red&quot;&gt;&quot;text/html;charset=utf-8&quot;&lt;/font&gt;); //不要写错，写错了会下载的。
+2. resp.setContentType(&quot;text/html;charset=utf-8&quot;);  
+
+3. &lt;meta\&gt;模拟一个http响应头  
+&lt;pre&gt;
+resp.getOutputStream().write(&quot;&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&quot;.getBytes()); meta标签显示问题请看，markdown文件信息
+resp.getOutputStream().write(&quot;中国&quot;.getBytes(&quot;UTF-8&quot;));
+&lt;/pre&gt;
+注意：不同浏览器效果不同，IE11可以正常解析，谷歌将&lt;meta&gt;数据当做文本显示。
+###向客户端（浏览器）输出数字的问题  **resp.getOutputStream()用法问题**
+&lt;pre&gt; 
+req.getOutputStream().write(50);//不能正常显示
+req.getOutputStream().write((50+&quot;&quot;).getBytes()); 
+&lt;/pre&gt;
+
+&lt;p&gt;###向客户端（浏览器）输出中文的问题   &lt;strong&gt;resp.getWriter()用法问题&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;String data = “中国”;&lt;br&gt;PrintWriter pw = resp.getWriter();&lt;br&gt;pw.write(data);//无法正常显示&lt;br&gt;//——–改成下面&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;resp.setCharacterEncoding(“UTF-8”);//更改response码表,通知服务器用utf-8的方式读取数据，写给客户机&lt;br&gt;//resp.setHeader(“content-type”, “text/html;charset=utf-8”);//指定浏览器解析该html文档用utf-8&lt;br&gt;resp.setContentType(“text/html;charset=utf-8”);//简单设置&lt;br&gt;&lt;/font&gt;String data = “中国”;&lt;br&gt;PrintWriter pw = resp.getWriter();&lt;br&gt;pw.write(data);&lt;br&gt;//——最简单的方式&lt;font color=&quot;red&quot;&gt;&lt;br&gt;resp.setContentType(“text/html;charset=utf-8”);//简单设置&lt;br&gt;&lt;/font&gt;String data = “中国”;&lt;br&gt;PrintWriter pw = resp.getWriter();&lt;br&gt;pw.write(data);&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;###文件下载及中文文件下载方式 &lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {&lt;br&gt;    //这只是转发请求到图片资源&lt;br&gt;    //RequestDispatcher rd = this.getServletContext().getRequestDispatcher(“/down/18岁的天空.jpg”);&lt;br&gt;    //rd.forward(req, resp);&lt;br&gt;    //1.获取请求资源的文件名（不包含实际路径）&lt;br&gt;    String realPath = this.getServletContext().getRealPath(“/download/18岁的天空.jpg”);&lt;br&gt;    //realPath = E:\Java\web\apache-tomcat-8.0.30\webapps\day06\download\18岁的天空.jpg&lt;br&gt;    String filename = realPath.substring(realPath.lastIndexOf(“\“)+1);&lt;/pre&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;///2.设置http响应头（下载头），filename要给定URL编码,不然下载时文件名乱码。
+resp.setHeader(&amp;quot;Content-Disposition&amp;quot;, &amp;quot;attachment;filename=&amp;quot;+URLEncoder.encode(filename, &amp;quot;utf-8&amp;quot;));
+//3.关联图片文件，读写操作
+FileInputStream in = new FileInputStream(realPath);
+System.out.println(in);
+byte[] buffer = new byte[1042];
+int len=0;
+while((len=in.read(buffer))&amp;gt;0){
+    resp.getOutputStream().write(buffer, 0, len);
+}
+if(in!=null){
+    in.close();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;br&gt; &lt;/p&gt;
+&lt;p&gt;###servlet生成随机图片。用于验证码  &lt;/p&gt;
+&lt;p&gt;google下验证码生成java,有时间研究下，暂时没空。&lt;/p&gt;
+&lt;p&gt;###http响应头refresh的使用  &lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;public class ResponseDemo5 extends HttpServlet {&lt;br&gt;    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {&lt;br&gt;        String data = “中国人”;&lt;/pre&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;font color=&amp;quot;red&amp;quot;&amp;gt;response.setHeader(&amp;quot;Refresh&amp;quot;, &amp;quot;3;http://www.baidu.com&amp;quot;);&amp;lt;/font&amp;gt;
+    response.setCharacterEncoding(&amp;quot;UTF-8&amp;quot;);
+    response.setContentType(&amp;quot;text/html;charset=utf-8&amp;quot;);
+    System.out.println(&amp;quot;1111111111111&amp;quot;);
+    response.getWriter().write(data);
+}
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    doGet(request, response);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;###response响应的请求重定向   &lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;response.setStatus(302);&lt;br&gt;response.setHeader(“location”, “/day05/view.jsp”);//&lt;font color=&quot;red&quot;&gt;可以使跨应用的资源&lt;/font&gt;&lt;br&gt;//—简便方法&lt;br&gt;response.sendRedirect(“/day05/view.jsp”);&lt;br&gt;&lt;/pre&gt;&lt;br&gt;重定向特点：地址栏会改变。     发2次请求&lt;br&gt;一般用于登陆，用户登陆成功后能看到页面地址变化。&lt;/p&gt;
+&lt;/meta\&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;title_3A_eclipse__u5F00_u53D1Servlet&quot;&gt;&lt;a href=&quot;#title_3A_eclipse__u5F00_u53D1Servlet&quot; class=&quot;headerlink&quot; title=&quot;title: eclipse 开发Ser
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>http协议之get和post</title>
+    <link href="http://wudixiaomai.github.io/2016/02/28/day0228/"/>
+    <id>http://wudixiaomai.github.io/2016/02/28/day0228/</id>
+    <published>2016-02-28T09:24:23.123Z</published>
+    <updated>2016-02-28T09:24:23.123Z</updated>
+    
+    <content type="html">&lt;p&gt;#http请求 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;get请求&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/OAPoDfM.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;post请求&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/bw8uijh.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;#http响应 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lsbTlls.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;#URL解析及相关的URI,URN&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/32aSOge.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;#常用服务器的TCP端口&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/D55GRsl.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/BjmiHmn.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/BZ8OZaG.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#http请求 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;get请求&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/OAPoDfM.png&quot; alt=&quot;&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;post请求&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/b
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql学习(日期时间类型)</title>
+    <link href="http://wudixiaomai.github.io/2016/02/22/day0218/"/>
+    <id>http://wudixiaomai.github.io/2016/02/22/day0218/</id>
+    <published>2016-02-22T12:43:01.536Z</published>
+    <updated>2016-02-22T12:43:01.536Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Mysql下载与安装  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mysql 各个版本区别：&lt;/p&gt;
+&lt;p&gt;1.MySQL Community Server 社区版本，开源免费，但不提供官方技术支持。&lt;br&gt;2、MySQL Enterprise Edition 企业版本，需付费，可以试用30天。&lt;br&gt;3、MySQL Cluster 集群版，开源免费。可将几个MySQL Server封装成一个Server。&lt;br&gt;4、MySQL Cluster CGE 高级集群版，需付费。&lt;br&gt;5、MySQL Workbench（GUI TOOL）一款专为MySQL设计的ER/数据库建模工具。它是著名的数据库设计工具DBDesigner4的继任者。MySQL Workbench又分为两个版本，分别是社区版（MySQL Workbench OSS）、商用版（MySQL Workbench SE）。&lt;br&gt;MySQL Community Server 是开源免费的，这也是我们通常用的MySQL的版本。根据不同的操作系统平台细分为多个版本。&lt;br&gt;下载&lt;em&gt;社区版本&lt;/em&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;日期类型：  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Mysql下载与安装  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mysql 各个版本区别：&lt;/p&gt;
+&lt;p&gt;1.MySQL Community Server 社区版本，开源免费，但不提供官方技术支持。&lt;br&gt;2、MySQL Enterprise 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>corejava问题汇总</title>
+    <link href="http://wudixiaomai.github.io/2016/02/08/day0208/"/>
+    <id>http://wudixiaomai.github.io/2016/02/08/day0208/</id>
+    <published>2016-02-08T04:07:15.000Z</published>
+    <updated>2016-02-08T06:07:57.291Z</updated>
+    
+    <content type="html">&lt;p&gt;GregorianCalendar演示的日历：演示当前月份日历;&lt;br&gt;DateFormatSymbols这个类什么用？  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;GregorianCalendar演示的日历：演示当前月份日历;&lt;br&gt;DateFormatSymbols这个类什么用？  &lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>suibi</title>
+    <link href="http://wudixiaomai.github.io/2016/01/24/suibi/"/>
+    <id>http://wudixiaomai.github.io/2016/01/24/suibi/</id>
+    <published>2016-01-24T05:56:45.000Z</published>
+    <updated>2016-01-24T05:59:19.929Z</updated>
+    
+    <content type="html">&lt;p&gt;24号杭州天气最低零下&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/11Zzpmq.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;很冷，真的很冷&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;24号杭州天气最低零下&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/11Zzpmq.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;很冷，真的很冷&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo常见问题</title>
+    <link href="http://wudixiaomai.github.io/2016/01/22/pro-of-hexo/"/>
+    <id>http://wudixiaomai.github.io/2016/01/22/pro-of-hexo/</id>
+    <published>2016-01-22T05:54:38.000Z</published>
+    <updated>2016-01-22T06:02:57.910Z</updated>
+    
+    <content type="html">&lt;p&gt;1 执行hexo deploy 后，提示done，但是github上没更新&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;是由于站点配置文件_config.yml中的deploy冒号后面加空格&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1 执行hexo deploy 后，提示done，但是github上没更新&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;是由于站点配置文件_config.yml中的deploy冒号后面加空格&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一些有用的网站</title>
+    <link href="http://wudixiaomai.github.io/2016/01/22/wangzhandaquan/"/>
+    <id>http://wudixiaomai.github.io/2016/01/22/wangzhandaquan/</id>
+    <published>2016-01-22T05:31:44.000Z</published>
+    <updated>2016-01-22T06:07:50.551Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://segmentfault.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;segmentfault&lt;/a&gt;，这是个开发交流网站，你遇到的问题可以在这里提问。&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;简书&lt;/a&gt;，交流故事，沟通想法。一个机遇内容分享的社区。&lt;br&gt;&lt;a href=&quot;https://www.zhihu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;，收索问题、话题或人。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://segmentfault.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;segmentfault&lt;/a&gt;，这是个开发交流网站，你遇到的问题可以在这里提问。&lt;br&gt;&lt;a href=&quot;http://www.jiansh
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java_thread</title>
+    <link href="http://wudixiaomai.github.io/2016/01/21/demo/"/>
+    <id>http://wudixiaomai.github.io/2016/01/21/demo/</id>
+    <published>2016-01-21T09:57:26.000Z</published>
+    <updated>2016-01-22T05:25:40.396Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B&quot;&gt;&lt;a href=&quot;#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B&quot; class=&quot;headerlink&quot; title=&quot;corejava学习之多线程&quot;&gt;&lt;/a&gt;corejava学习之多线程&lt;/h2&gt;&lt;p&gt;使用自定义线程机制，有两种实现方式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实现java.lang.Runnable接口&lt;br&gt;&lt;pre&gt;&lt;br&gt; &lt;code&gt;&lt;pre&gt;&lt;code&gt;class MyRunnable implements Runnable{
+    //实现run()方法
+    public void run(){
+        //task code
+    }
+}
+&lt;/code&gt;&lt;/pre&gt; &lt;/code&gt;&lt;br&gt;&lt;/pre&gt;&lt;br&gt;接着,Thread t = new Thread(new MyRunnable());//创建定义过任务的Thread实例&lt;br&gt;t.start();//启动改线程实例&lt;/li&gt;
+&lt;li&gt;继续java.lang.Thread类&lt;br&gt; &lt;pre&gt;&lt;br&gt; &lt;code&gt;&lt;pre&gt;&lt;code&gt;class MyThread extends Thread{
+    //重写run()方法
+    public void run(){
+        //task code
+    }
+}
+&lt;/code&gt;&lt;/pre&gt; &lt;/code&gt;&lt;br&gt;&lt;/pre&gt;&lt;br&gt;t.start();//启动改线程实例&lt;br&gt;一般来说，&lt;strong&gt;建议使用第一种方式&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://pic86.nipic.com/file/20151228/958400_145917002000_2.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B&quot;&gt;&lt;a href=&quot;#corejava_u5B66_u4E60_u4E4B_u591A_u7EBF_u7A0B&quot; class=&quot;headerlink&quot; title=&quot;core
+    
+    </summary>
+    
+    
+      <category term="java 多线程" scheme="http://wudixiaomai.github.io/tags/java-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>
